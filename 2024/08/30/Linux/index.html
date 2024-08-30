@@ -1,0 +1,1316 @@
+<!DOCTYPE html><html lang="zn-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Linux | 白小笙的个人博客</title><meta name="author" content="白小笙"><meta name="copyright" content="白小笙"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="云崽机器人搭建教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux">
+<meta property="og:url" content="http://example.com/2024/08/30/Linux/index.html">
+<meta property="og:site_name" content="白小笙的个人博客">
+<meta property="og:description" content="云崽机器人搭建教程">
+<meta property="og:locale" content="zn_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2024-08-30T04:30:00.000Z">
+<meta property="article:modified_time" content="2024-08-30T06:30:00.000Z">
+<meta property="article:author" content="白小笙">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/"><link rel="canonical" href="http://example.com/2024/08/30/Linux/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Linux',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-08-30 14:30:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="白小笙的个人博客"><span class="site-name">白小笙的个人博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Linux</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-08-30T04:30:00.000Z" title="Created 2024-08-30 12:30:00">2024-08-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-08-30T06:30:00.000Z" title="Updated 2024-08-30 14:30:00">2024-08-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Linux"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Linux-Day01"><a href="#Linux-Day01" class="headerlink" title="Linux-Day01"></a>Linux-Day01</h1><h2 id="课程内容"><a href="#课程内容" class="headerlink" title="课程内容"></a>课程内容</h2><ul>
+<li>Linux简介</li>
+<li>Linux安装</li>
+<li>Linux常用命令</li>
+</ul>
+<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><h3 id="1-1-什么是Linux"><a href="#1-1-什么是Linux" class="headerlink" title="1.1 什么是Linux"></a>1.1 什么是Linux</h3><img src="/2024/08/30/Linux/image-20210808232140228.png" class="" title="image-20210808232140228"> 
+
+<p>Linux是一套免费使用和自由传播的操作系统。说到操作系统，大家比较熟知的应该就是Windows和MacOS操作系统，我们今天所学习的Linux也是一款操作系统。</p>
+<img src="/2024/08/30/Linux/image-20210808233951662.png" class="" title="image-20210808233951662"> 
+
+<p>我们作为javaEE开发工程师，将来在企业中开发时会涉及到很多的数据库、中间件等技术，比如MySQL、Redis、MQ等技术，而这些应用软件大多都是需要安装在Linux系统中使用的。我们做为开发人员，是需要通过远程工具连接Linux操作系统，然后来操作这些软件的。而且一些小公司，可能还需要我们自己在服务器上安装这些软件。</p>
+<p>所以，不管从企业的用人需求层面，还是个人发展需要层面来讲，我们作为服务端开发工程师，Linux的基本使用是我们必不可少的技能。</p>
+<p><strong>对于Linux的常用指令的学习，最好的学习方法就是：<font color='red' size=7>多敲</font></strong></p>
+<h2 id="2-Linux简介"><a href="#2-Linux简介" class="headerlink" title="2. Linux简介"></a>2. Linux简介</h2><h3 id="2-1-主流操作系统"><a href="#2-1-主流操作系统" class="headerlink" title="2.1 主流操作系统"></a>2.1 主流操作系统</h3><p>不同领域的主流操作系统，主要分为以下这么几类： 桌面操作系统、服务器操作系统、移动设备操作系统、嵌入式操作系统。接下来，这几个领域中，代表性的操作系统是那些?</p>
+<p>1). 桌面操作系统</p>
+<table>
+<thead>
+<tr>
+<th>操作系统</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Windows</td>
+<td>用户数量最多</td>
+</tr>
+<tr>
+<td>MacOS</td>
+<td>操作体验好，办公人士首选</td>
+</tr>
+<tr>
+<td>Linux</td>
+<td>用户数量少(桌面操作系统,Linux使用较少)</td>
+</tr>
+</tbody></table>
+<p>2). 服务器操作系统</p>
+<table>
+<thead>
+<tr>
+<th>操作系统</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Unix</td>
+<td>安全、稳定、付费</td>
+</tr>
+<tr>
+<td>Linux</td>
+<td>安全、稳定、免费、占有率高</td>
+</tr>
+<tr>
+<td>Windows Server</td>
+<td>付费、占有率低</td>
+</tr>
+</tbody></table>
+<p>3). 移动设备操作系统</p>
+<table>
+<thead>
+<tr>
+<th>操作系统</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Android</td>
+<td>基于 Linux 、开源，主要用于智能手机、平板电脑和智能电视</td>
+</tr>
+<tr>
+<td>IOS</td>
+<td>苹果公司开发、不开源，用于苹果公司的产品，例如：iPhone、 iPad</td>
+</tr>
+</tbody></table>
+<p>4). 嵌入式操作系统</p>
+<table>
+<thead>
+<tr>
+<th>操作系统</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Linux</td>
+<td>机顶盒、路由器、交换机</td>
+</tr>
+</tbody></table>
+<h3 id="2-2-Linux系统版本"><a href="#2-2-Linux系统版本" class="headerlink" title="2.2 Linux系统版本"></a>2.2 Linux系统版本</h3><p>Linux系统的版本分为两种，分别是： 内核版 和 发行版。</p>
+<p><strong>1). 内核版</strong></p>
+<ul>
+<li><p>由Linus Torvalds及其团队开发、维护</p>
+</li>
+<li><p>免费、开源</p>
+</li>
+<li><p>负责控制硬件</p>
+</li>
+</ul>
+<p><strong>2). 发行版</strong></p>
+<ul>
+<li><p>基于Linux内核版进行扩展</p>
+</li>
+<li><p>由各个Linux厂商开发、维护</p>
+</li>
+<li><p>有收费版本和免费版本</p>
+</li>
+</ul>
+<p>我们使用Linux操作系统，实际上选择的是Linux的发行版本。在linux系统中，有各种各样的发行版本，具体如下： </p>
+<table>
+<thead>
+<tr>
+<th>发行版本</th>
+<th>Logo</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ubuntu</td>
+<td><style>.uydetyvenfvt{zoom:50%;}</style><img src="/2024/08/30/Linux/image-20210809001838861.png" class="uydetyvenfvt" alt="image-20210809001838861"></td>
+<td>以桌面应用为主</td>
+</tr>
+<tr>
+<td>RedHat</td>
+<td><style>.cgsrqfkxyuuy{zoom:50%;}</style><img src="/2024/08/30/Linux/image-20210809001731378.png" class="cgsrqfkxyuuy" alt="image-20210809001731378"></td>
+<td>应用最广泛、收费</td>
+</tr>
+<tr>
+<td>CentOS</td>
+<td><style>.tkrkynlcykjw{zoom:50%;}</style><img src="/2024/08/30/Linux/image-20210809001741238.png" class="tkrkynlcykjw" alt="image-20210809001741238"></td>
+<td>RedHat的社区版、免费</td>
+</tr>
+<tr>
+<td>openSUSE</td>
+<td><style>.xkvgcvbqonvg{zoom:50%;}</style><img src="/2024/08/30/Linux/image-20210809001750999.png" class="xkvgcvbqonvg" alt="image-20210809001750999"></td>
+<td>对个人完全免费、图形界面华丽</td>
+</tr>
+<tr>
+<td>Fedora</td>
+<td><style>.pytaqrbqufqs{zoom:50%;}</style><img src="/2024/08/30/Linux/image-20210809001800676.png" class="pytaqrbqufqs" alt="image-20210809001800676"></td>
+<td>功能完备、快速更新、免费</td>
+</tr>
+<tr>
+<td>红旗Linux</td>
+<td><style>.qghjxvmjmnfc{zoom:50%;}</style><img src="/2024/08/30/Linux/image-20210809001814942.png" class="qghjxvmjmnfc" alt="image-20210809001814942"></td>
+<td>北京中科红旗软件技术有限公司开发</td>
+</tr>
+</tbody></table>
+<p>除了上述罗列出来的发行版，还有很多Linux发行版，这里，我们就不再一一列举了。</p>
+<h3 id="2-3-Linux安装"><a href="#2-3-Linux安装" class="headerlink" title="2.3. Linux安装"></a>2.3. Linux安装</h3><h4 id="2-3-1-安装方式介绍"><a href="#2-3-1-安装方式介绍" class="headerlink" title="2.3.1 安装方式介绍"></a>2.3.1 安装方式介绍</h4><p>Linux系统的安装方式，主要包含以下两种：</p>
+<img src="/2024/08/30/Linux/image-20210809184915617.png" class="" title="image-20210809184915617"> 
+
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>概述</th>
+<th>场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>物理机安装</td>
+<td>直接将操作系统安装到服务器硬件上</td>
+<td>企业开发中，我们使用的服务器基本都是采用这种方式</td>
+</tr>
+<tr>
+<td>虚拟机安装</td>
+<td>通过虚拟机软件安装</td>
+<td>我们在学习阶段，没有自己服务器，而我们又需要学Linux，就可以安装在虚拟机上</td>
+</tr>
+</tbody></table>
+<p><strong>虚拟机</strong>（Virtual Machine）指通过<strong>软件</strong>模拟的具有完整硬件系统功能、运行在完全隔离环境中的完整计算机系统。常用虚拟机软件： </p>
+<ul>
+<li><p>VMWare </p>
+</li>
+<li><p>VirtualBox</p>
+</li>
+<li><p>VMLite WorkStation</p>
+</li>
+<li><p>Qemu</p>
+</li>
+<li><p>HopeddotVOS</p>
+</li>
+</ul>
+<p>那么我们就可以在课程中将Linux操作系统安装在虚拟机中，我们课上选择的虚拟机软件是VMware。</p>
+<h4 id="2-3-2-安装VMware"><a href="#2-3-2-安装VMware" class="headerlink" title="2.3.2 安装VMware"></a>2.3.2 安装VMware</h4><img src="/2024/08/30/Linux/image-20231213232506962.png" class="" title="image-20231213232506962"> 
+
+<p>在我们的课程资料中提供了VMware的安装程序。直接双击运行VMware安装程序，根据提示完成安装即可。</p>
+<img src="/2024/08/30/Linux/image-20210809223932893.png" class="" title="image-20210809223932893"> 
+
+<img src="/2024/08/30/Linux/image-20210809223953820.png" class="" title="image-20210809223953820"> 
+
+<p>以上就是VMware在安装时的每一步操作，基本上就是点击 “下一步” 一直进行安装。</p>
+<h4 id="2-3-3-挂载Linux系统"><a href="#2-3-3-挂载Linux系统" class="headerlink" title="2.3.3 挂载Linux系统"></a>2.3.3 挂载Linux系统</h4><p>1). 解压 <code>资料/Linux镜像/CentOS7-1.zip </code> 到一个比较大的磁盘中。</p>
+<p>2). 双击 <code>.vmx</code> 文件，选择以 <code>Vmware Workstation</code> 打开这个文件。</p>
+<style>.xbkjgtcvmnjh{zoom: 67%;}</style><img src="/2024/08/30/Linux/image-20231213232819432.png" class="xbkjgtcvmnjh" alt="image-20231213232819432"> <style>.ezsexihoqmgl{zoom:67%;}</style><img src="/2024/08/30/Linux/image-20231213232915747.png" class="ezsexihoqmgl" alt="image-20231213232915747"> 
+
+<p>3). 挂载完毕之后，启动Linux服务器。</p>
+<style>.qxdsgfesyvhs{zoom:80%;}</style><img src="/2024/08/30/Linux/image-20231213232952317.png" class="qxdsgfesyvhs" alt="image-20231213232952317"> 
+
+<p>4). 启动完毕之后，登录服务器。 输入用户名：root，密码：1234  （<strong>注意：linux系统输入密码是不显示的，输入完毕，回车即可登录</strong>）</p>
+<style>.vwxqpbtfprsl{zoom:80%;}</style><img src="/2024/08/30/Linux/image-20231213233314187.png" class="vwxqpbtfprsl" alt="image-20231213233314187"> 
+
+<p>5). 输入命令 <code>ip addr</code> 查看服务器的IP地址</p>
+<style>.xzyzvvfhomxq{zoom:80%;}</style><img src="/2024/08/30/Linux/image-20231213233406260.png" class="xzyzvvfhomxq" alt="image-20231213233406260"> 
+
+
+
+
+
+
+
+<h3 id="2-4-安装SSH连接工具"><a href="#2-4-安装SSH连接工具" class="headerlink" title="2.4 安装SSH连接工具"></a>2.4 安装SSH连接工具</h3><h4 id="2-4-1-SSH连接工具介绍"><a href="#2-4-1-SSH连接工具介绍" class="headerlink" title="2.4.1 SSH连接工具介绍"></a>2.4.1 SSH连接工具介绍</h4><p>Linux已经安装并且配置好了，接下来我们要来学习Linux的基本操作指令。而在学习之前，我们还需要做一件事情，由于我们企业开发时，Linux服务器一般都是在远程的机房部署的，我们要操作服务器，不会每次都跑到远程的机房里面操作，而是会直接通过SSH连接工具进行连接操作。</p>
+<img src="/2024/08/30/Linux/image-20210810000224690.png" class="" title="image-20210810000224690"> 
+
+<p>SSH（Secure Shell），建立在应用层基础上的安全协议。常用的SSH连接工具: </p>
+<table>
+<thead>
+<tr>
+<th>SSH工具</th>
+<th>Logo</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>putty</td>
+<td><style>.stypyswbeyiq{zoom:15%;}</style><img src="/2024/08/30/Linux/image-20210809235613688.png" class="stypyswbeyiq" alt="image-20210809235613688"></td>
+<td>免费, 界面简单, 功能单一</td>
+</tr>
+<tr>
+<td>secureCRT</td>
+<td><style>.biagvkpbsebi{zoom:20%;}</style><img src="/2024/08/30/Linux/image-20210809235723109.png" class="biagvkpbsebi" alt="image-20210809235723109"></td>
+<td>收费, 功能强大</td>
+</tr>
+<tr>
+<td>xshell</td>
+<td><style>.iocvbdhdzykq{zoom:50%;}</style><img src="/2024/08/30/Linux/image-20210809235802640.png" class="iocvbdhdzykq" alt="image-20210809235802640"></td>
+<td>收费版&#x2F;免费版</td>
+</tr>
+<tr>
+<td>finalshell</td>
+<td><style>.lzkeibvisbwm{zoom: 67%;}</style><img src="/2024/08/30/Linux/image-20210809235841384.png" class="lzkeibvisbwm" alt="image-20210809235841384"></td>
+<td>免费, 功能强大, 界面效果好 (课程中采用)</td>
+</tr>
+</tbody></table>
+<h4 id="3-5-2-FinalShell安装"><a href="#3-5-2-FinalShell安装" class="headerlink" title="3.5.2 FinalShell安装"></a>3.5.2 FinalShell安装</h4><p>在课程资料中，提供了finalShell的安装包</p>
+<img src="/2024/08/30/Linux/image-20210810000309123.png" class="" title="image-20210810000309123"> 
+
+<p>双击.exe文件，然后进行正常的安装即可。</p>
+<img src="/2024/08/30/Linux/image-20210810000318212.png" class="" title="image-20210810000318212"> 
+
+
+
+
+
+<h4 id="3-5-3-连接Linux"><a href="#3-5-3-连接Linux" class="headerlink" title="3.5.3 连接Linux"></a>3.5.3 连接Linux</h4><p><strong>1). 打开finalShell</strong></p>
+<style>.rydzuqgvfnur{zoom:80%;}</style><img src="/2024/08/30/Linux/image-20210810173004153.png" class="rydzuqgvfnur" alt="image-20210810173004153"> 
+
+
+
+<p><strong>2). 建立连接</strong></p>
+<style>.inouiltdccgs{zoom:80%;}</style><img src="/2024/08/30/Linux/image-20210810173138650.png" class="inouiltdccgs" alt="image-20210810173138650"> 
+
+ <img src="/2024/08/30/Linux/image-20210810173900140.png" class="" title="image-20210810173900140"> 
+
+
+
+
+
+<h3 id="2-5-Linux目录结构"><a href="#2-5-Linux目录结构" class="headerlink" title="2.5 Linux目录结构"></a>2.5 Linux目录结构</h3><p>登录到Linux系统之后，我们需要先来熟悉一下Linux的目录结构。在Linux系统中，也是存在目录的概念的，但是Linux的目录结构和Windows的目录结构是存在比较多的差异的 在Windows目录下，是一个一个的盘符(C盘、D盘、E盘)，目录是归属于某一个盘符的。Linux系统中的目录有以下特点： </p>
+<p><strong>A. &#x2F; 是所有目录的顶点</strong></p>
+<p><strong>B. 目录结构像一颗倒挂的树</strong></p>
+<p><strong>Linux 和 Windows的目录结构对比:</strong> </p>
+<style>.mtcjxpglyhjc{zoom: 80%;}</style><img src="/2024/08/30/Linux/image-20210810174831655.png" class="mtcjxpglyhjc" alt="image-20210810174831655"> 
+
+
+
+<p>Linux的目录结构，如下： </p>
+<img src="/2024/08/30/Linux/image-20210810174954476.png" class="" title="image-20210810174954476"> 
+
+
+
+<p>根目录&#x2F; 下各个目录的作用及含义说明:  </p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>目录</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>&#x2F;bin</td>
+<td>存放二进制可执行文件</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&#x2F;boot</td>
+<td>存放系统引导时使用的各种文件</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&#x2F;dev</td>
+<td>存放设备文件</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&#x2F;etc</td>
+<td>存放系统配置文件</td>
+</tr>
+<tr>
+<td>5</td>
+<td>&#x2F;home</td>
+<td>存放系统用户的文件</td>
+</tr>
+<tr>
+<td>6</td>
+<td>&#x2F;lib</td>
+<td>存放程序运行所需的共享库和内核模块</td>
+</tr>
+<tr>
+<td>7</td>
+<td>&#x2F;opt</td>
+<td>额外安装的可选应用程序包所放置的位置</td>
+</tr>
+<tr>
+<td>8</td>
+<td>&#x2F;root</td>
+<td>超级用户目录</td>
+</tr>
+<tr>
+<td>9</td>
+<td>&#x2F;sbin</td>
+<td>存放二进制可执行文件，只有root用户才能访问</td>
+</tr>
+<tr>
+<td>10</td>
+<td>&#x2F;tmp</td>
+<td>存放临时文件</td>
+</tr>
+<tr>
+<td>11</td>
+<td>&#x2F;usr</td>
+<td>存放系统应用程序</td>
+</tr>
+<tr>
+<td>12</td>
+<td>&#x2F;var</td>
+<td>存放运行时需要改变数据的文件，例如日志文件</td>
+</tr>
+</tbody></table>
+<h2 id="3-Linux常用命令"><a href="#3-Linux常用命令" class="headerlink" title="3. Linux常用命令"></a>3. Linux常用命令</h2><h3 id="3-1-Linux命令初体验"><a href="#3-1-Linux命令初体验" class="headerlink" title="3.1 Linux命令初体验"></a>3.1 Linux命令初体验</h3><h4 id="3-1-1-常用命令演示"><a href="#3-1-1-常用命令演示" class="headerlink" title="3.1.1 常用命令演示"></a>3.1.1 常用命令演示</h4><p>在这一部分中，我们主要介绍几个常用的命令，让大家快速感受以下Linux指令的操作方式。主要包含以下几个指令： </p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>对应英文</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>ls [目录名]</td>
+<td>list</td>
+<td>查看当前目录下的内容</td>
+</tr>
+<tr>
+<td>2</td>
+<td>pwd</td>
+<td>print work directory</td>
+<td>查看当前所在目录</td>
+</tr>
+<tr>
+<td>3</td>
+<td>cd [目录名]</td>
+<td>change directory</td>
+<td>切换目录</td>
+</tr>
+<tr>
+<td>4</td>
+<td>touch [文件名]</td>
+<td>touch</td>
+<td>如果文件不存在,创建文件</td>
+</tr>
+<tr>
+<td>5</td>
+<td>mkdir [目录名]</td>
+<td>make directory</td>
+<td>创建目录</td>
+</tr>
+<tr>
+<td>6</td>
+<td>rm [文件名]</td>
+<td>remove</td>
+<td>删除指定文件</td>
+</tr>
+</tbody></table>
+<p>接下来，我们快速的来演示一下这些常用的指令。</p>
+<p><strong>1). ls</strong></p>
+<img src="/2024/08/30/Linux/image-20210810182042076.png" class="" title="image-20210810182042076"> 
+
+<blockquote>
+<p>指令解读: </p>
+<p>​	ls 	查看当前目录下的内容(文件及目录)</p>
+<p>​	ls &#x2F;   查看指定目录(&#x2F;)下的内容</p>
+</blockquote>
+<p><strong>2). pwd</strong></p>
+<img src="/2024/08/30/Linux/image-20210810182335470.png" class="" title="image-20210810182335470"> 
+
+<blockquote>
+<p>指令解读: </p>
+<p>​	pwd	查看当前所在目录</p>
+</blockquote>
+<p><strong>3). cd</strong></p>
+<img src="/2024/08/30/Linux/image-20210810182607821.png" class="" title="image-20210810182607821"> 
+
+<blockquote>
+<p>指令解读: </p>
+<p>​	cd  &#x2F;		切换到根目录</p>
+<p>​	cd  &#x2F;root	切换到&#x2F;root目录</p>
+</blockquote>
+<p><strong>4). touch</strong></p>
+<img src="/2024/08/30/Linux/image-20210810182917750.png" class="" title="image-20210810182917750"> 
+
+<blockquote>
+<p>指令解读: </p>
+<p>​	touch  1.txt    创建文件1.txt</p>
+<p>​	touch  2.txt 3.txt 4.txt   一次性创建文件2.txt,3.txt,3.txt</p>
+</blockquote>
+<p><strong>5). mkdir</strong></p>
+<img src="/2024/08/30/Linux/image-20210810183154023.png" class="" title="image-20210810183154023"> 
+
+<blockquote>
+<p>指令解读: </p>
+<p>​	mkdir 01 	创建文件夹01 </p>
+</blockquote>
+<p><strong>6). rm</strong></p>
+<img src="/2024/08/30/Linux/image-20210810183522849.png" class="" title="image-20210810183522849"> 
+
+<blockquote>
+<p>指令解读: </p>
+<p>​	rm  4.txt	删除文件 (删除文件时,需要确认,输入y, 代表确定)</p>
+</blockquote>
+<p><strong>注意:</strong></p>
+<p>​	<img src="/2024/08/30/Linux/image-20210810184600425.png" class="" title="image-20210810184600425"> </p>
+<p>​	&#x3D;&#x3D;在执行Linux命令时，提示信息如果显示为乱码，如上图所示。这是由于编码问题导致，只需要修改Linux的编码即可，命令如下：&#x3D;&#x3D;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &#x27;LANG=&quot;en_US.UTF-8&quot;&#x27; &gt;&gt; /etc/profile</span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="3-1-2-Linux命令使用技巧"><a href="#3-1-2-Linux命令使用技巧" class="headerlink" title="3.1.2 Linux命令使用技巧"></a>3.1.2 Linux命令使用技巧</h4><p>在我们使用Linux系统命令时，可以使用以下几个技巧： </p>
+<p>1). Tab键自动补全</p>
+<p>2). 连续两次Tab键，给出操作提示</p>
+<p>3). 使用上下箭头快速调出曾经使用过的命令</p>
+<p>4). 使用clear命令或者Ctrl+l快捷键实现清屏</p>
+<p><strong>操作示例:</strong> </p>
+<p>A. 执行指令的时候，对于操作的文件&#x2F;目录，按一下Tab会自动补全:</p>
+<img src="/2024/08/30/Linux/image-20210810185641027.png" class="" title="image-20210810185641027"> 
+
+
+
+<p>B. 如果上述以 “1.” 开头的文件有多个，可以按两下Tab键，给出操作提示:</p>
+<img src="/2024/08/30/Linux/image-20210810190101671.png" class="" title="image-20210810190101671"> 
+
+
+
+<p>C. 使用clear命令或者Ctrl+l快捷键实现清屏:</p>
+<img src="/2024/08/30/Linux/image-20210810190458929.png" class="" title="image-20210810190458929">
+
+<p>清屏之后，界面就变得干净了: </p>
+<img src="/2024/08/30/Linux/image-20210810190546209.png" class="" title="image-20210810190546209"> 
+
+
+
+
+
+
+
+<h4 id="3-1-3-Linux命令格式"><a href="#3-1-3-Linux命令格式" class="headerlink" title="3.1.3 Linux命令格式"></a>3.1.3 Linux命令格式</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">command [-options] [parameter]</span><br><span class="line">	</span><br><span class="line">说明: </span><br><span class="line">	command: 	 命令名</span><br><span class="line">	[-options]:  选项，可用来对命令进行控制，也可以省略</span><br><span class="line">	[parameter]: 传给命令的参数，可以是零个、一个或者多个</span><br><span class="line">	</span><br><span class="line">注意: </span><br><span class="line">	[] 	 代表可选</span><br><span class="line">	命令名、选项、参数之间有空格进行分隔</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>操作示例:</strong> </p>
+<img src="/2024/08/30/Linux/image-20210810192202455.png" class="" title="image-20210810192202455"> 
+
+
+
+
+
+<h3 id="3-2-文件目录操作命令"><a href="#3-2-文件目录操作命令" class="headerlink" title="3.2 文件目录操作命令"></a>3.2 文件目录操作命令</h3><h4 id="3-2-1-ls"><a href="#3-2-1-ls" class="headerlink" title="3.2.1 ls"></a>3.2.1 ls</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">作用: 显示指定目录下的内容</span><br><span class="line">语法: ls [-al] [dir]</span><br><span class="line">说明: </span><br><span class="line">	-a 显示所有文件及目录 (. 开头的隐藏文件也会列出)</span><br><span class="line">	-l 除文件名称外，同时将文件型态(d表示目录，-表示文件)、权限、拥有者、文件大小等信息详细列出</span><br><span class="line">	</span><br><span class="line">注意: </span><br><span class="line">	由于我们使用ls命令时经常需要加入-l选项，所以Linux为ls -l命令提供了一种简写方式，即ll</span><br><span class="line">	</span><br><span class="line">常见用法: </span><br><span class="line">	ls -al 	查看当前目录的所有文件及目录详细信息</span><br><span class="line">	ls -al /etc   查看/etc目录下所有文件及目录详细信息</span><br><span class="line">	ll  	查看当前目录文件及目录的详细信息 </span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>操作示例:</strong></p>
+<img src="/2024/08/30/Linux/image-20210810193149925.png" class="" title="image-20210810193149925"> 
+
+ <img src="/2024/08/30/Linux/image-20210810193302047.png" class="" title="image-20210810193302047">
+
+
+
+<img src="/2024/08/30/Linux/image-20210810193605487.png" class="" title="image-20210810193605487"> 
+
+
+
+<img src="/2024/08/30/Linux/image-20210810194129919.png" class="" title="image-20210810194129919"> 
+
+
+
+<h4 id="3-2-2-cd"><a href="#3-2-2-cd" class="headerlink" title="3.2.2 cd"></a>3.2.2 cd</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">作用: 用于切换当前工作目录，即进入指定目录</span><br><span class="line">语法: cd [dirName]</span><br><span class="line">	</span><br><span class="line">特殊说明: </span><br><span class="line">	~	表示用户的home目录</span><br><span class="line">	. 	表示目前所在的目录</span><br><span class="line">	.. 	表示目前目录位置的上级目录</span><br><span class="line">	</span><br><span class="line">举例: </span><br><span class="line">	cd 	..		切换到当前目录的上级目录</span><br><span class="line">	cd 	~		切换到用户的home目录</span><br><span class="line">	cd 	/usr/local	切换到/usr/local目录</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>备注: </p>
+<p>​	用户的home目录 </p>
+<p>​	root用户	&#x2F;root</p>
+<p>​	其他用户	&#x2F;home&#x2F;xxx</p>
+</blockquote>
+<p>操作示例: </p>
+<img src="/2024/08/30/Linux/image-20210810230949775.png" class="" title="image-20210810230949775"> 
+
+<img src="/2024/08/30/Linux/image-20210810231024129.png" class="" title="image-20210810231024129"> 
+
+<p>cd .. 切换到当前目录位置的上级目录; 可以通过 cd ..&#x2F;.. 来切换到上级目录的上级目录。</p>
+<h4 id="3-2-3-cat"><a href="#3-2-3-cat" class="headerlink" title="3.2.3 cat"></a>3.2.3 cat</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">作用: 用于显示文件内容</span><br><span class="line">语法: cat [-n] fileName</span><br><span class="line"></span><br><span class="line">说明:</span><br><span class="line">	-n: 由1开始对所有输出的行数编号</span><br><span class="line"></span><br><span class="line">举例:</span><br><span class="line">	cat /etc/profile		查看/etc目录下的profile文件内容</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>操作演示:</strong> </p>
+<img src="/2024/08/30/Linux/image-20210810231651338.png" class="" title="image-20210810231651338"> 
+
+<p>cat 指令会一次性查看文件的所有内容，如果文件内容比较多，这个时候查看起来就不是很方便了，这个时候我们可以通过一个新的指令more。</p>
+<h4 id="3-2-4-more"><a href="#3-2-4-more" class="headerlink" title="3.2.4 more"></a>3.2.4 more</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">作用: 以分页的形式显示文件内容</span><br><span class="line">语法: more fileName</span><br><span class="line"></span><br><span class="line">操作说明:</span><br><span class="line">    回车键 	向下滚动一行</span><br><span class="line">    空格键 	向下滚动一屏</span><br><span class="line">    b 		返回上一屏</span><br><span class="line">    q或者Ctrl+C	退出more</span><br><span class="line">	</span><br><span class="line">举例：</span><br><span class="line">	more /etc/profile		以分页方式显示/etc目录下的profile文件内容</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>操作示例：</strong></p>
+<style>.vvksrerlufnh{zoom:80%;}</style><img src="/2024/08/30/Linux/image-20210810232212430.png" class="vvksrerlufnh" alt="image-20210810232212430"> 
+
+<p>当我们在查看一些比较大的文件时，我们可能需要经常查询文件尾部的数据信息，那这个时候如果文件很大，我们要一直向下翻页，直到最后一页，去看最新添加的数据，这种方式就比较繁琐了，此时，我们可以借助于tail指令。</p>
+<h4 id="3-2-5-tail"><a href="#3-2-5-tail" class="headerlink" title="3.2.5 tail"></a>3.2.5 tail</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">作用: 查看文件末尾的内容</span><br><span class="line">语法: tail [-f] fileName</span><br><span class="line"></span><br><span class="line">说明:</span><br><span class="line">	-f : 动态读取文件末尾内容并显示，通常用于日志文件的内容输出</span><br><span class="line">	</span><br><span class="line">举例: </span><br><span class="line">tail /etc/profile		显示/etc目录下的profile文件末尾10行的内容</span><br><span class="line">tail -20 /etc/profile	显示/etc目录下的profile文件末尾20行的内容</span><br><span class="line">tail -f /itcast/my.log	动态读取/itcast目录下的my.log文件末尾内容并显示</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>操作示例：</strong> </p>
+<p>A. 默认查询文件尾部10行记录</p>
+<img src="/2024/08/30/Linux/image-20210810232758510.png" class="" title="image-20210810232758510"> 
+
+<p>B. 可以通过指定参数设置查询尾部指定行数的数据</p>
+<img src="/2024/08/30/Linux/image-20210810232947018.png" class="" title="image-20210810232947018"> 
+
+<p>C. 动态读取文件尾部的数据</p>
+<img src="/2024/08/30/Linux/image-20210810233514284.png" class="" title="image-20210810233514284"> 
+
+<p>在窗口1中执行指令 <code>tail -f 1.txt</code> 动态查看文件尾部的数据。然后在顶部的标签中右键选择 “复制标签”，打开新的窗口2 , 此时再新打开的窗口2中执行指令 <code>echo 1 &gt;&gt; 1.txt</code> , 往1.txt文件尾部追加内容，然后我们就可以在窗口1中看到最新的文件尾部的数据。</p>
+<p>如果我们不想查看文件尾部的数据了，可以直接使用快捷键 Ctrl+C ， 结束当前进程。</p>
+<h4 id="3-2-6-mkdir"><a href="#3-2-6-mkdir" class="headerlink" title="3.2.6 mkdir"></a>3.2.6 mkdir</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">作用: 创建目录</span><br><span class="line">语法: mkdir [-p] dirName</span><br><span class="line"></span><br><span class="line">说明: </span><br><span class="line">	-p: 确保目录名称存在，不存在的就创建一个。通过此选项，可以实现多层目录同时创建</span><br><span class="line"></span><br><span class="line">举例: </span><br><span class="line">    mkdir itcast  在当前目录下，建立一个名为itcast的子目录</span><br><span class="line">    mkdir -p itcast/test   在工作目录下的itcast目录中建立一个名为test的子目录，若itcast目录不存在，则建立一个</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>操作演示:</strong></p>
+<img src="/2024/08/30/Linux/image-20210810234541073.png" class="" title="image-20210810234541073"> 
+
+
+
+
+
+<h4 id="3-2-7-rmdir"><a href="#3-2-7-rmdir" class="headerlink" title="3.2.7 rmdir"></a>3.2.7 rmdir</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">作用: 删除空目录</span><br><span class="line">语法: rmdir [-p] dirName</span><br><span class="line"></span><br><span class="line">说明:</span><br><span class="line">	-p: 当子目录被删除后使父目录为空目录的话，则一并删除</span><br><span class="line"></span><br><span class="line">举例:</span><br><span class="line">    rmdir itcast   删除名为itcast的空目录</span><br><span class="line">    rmdir -p itcast/test   删除itcast目录中名为test的子目录，若test目录删除后itcast目录变为空目录，则也被删除</span><br><span class="line">    rmdir itcast*   删除名称以itcast开始的空目录</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>操作演示:</strong> </p>
+<p>A. 删除空目录</p>
+<img src="/2024/08/30/Linux/image-20210810235044921.png" class="" title="image-20210810235044921"> 
+
+
+
+<p>B. 删除非空目录</p>
+<img src="/2024/08/30/Linux/image-20210810235221722.png" class="" title="image-20210810235221722"> 
+
+
+
+<p>C. 使用*通配符删除目录</p>
+<img src="/2024/08/30/Linux/image-20210810235305140.png" class="" title="image-20210810235305140"> 
+
+<blockquote>
+<p>*: 是一个通配符，代表任意字符； </p>
+<p>rmdir  itcast* : 删除以itcast开头的目录</p>
+<p>rmdir  *itcast : 删除以itcast结尾的目录</p>
+</blockquote>
+<h4 id="3-2-8-rm"><a href="#3-2-8-rm" class="headerlink" title="3.2.8 rm"></a>3.2.8 rm</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">作用: 删除文件或者目录</span><br><span class="line">语法: rm [-rf] name</span><br><span class="line"></span><br><span class="line">说明: </span><br><span class="line">    -r: 将目录及目录中所有文件（目录）逐一删除，即递归删除</span><br><span class="line">    -f: 无需确认，直接删除</span><br><span class="line">	</span><br><span class="line">举例: </span><br><span class="line">    rm -r itcast/     删除名为itcast的目录和目录中所有文件，删除前需确认</span><br><span class="line">    rm -rf itcast/    无需确认，直接删除名为itcast的目录和目录中所有文件</span><br><span class="line">    rm -f hello.txt   无需确认，直接删除hello.txt文件</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>操作示例:</strong> </p>
+<img src="/2024/08/30/Linux/image-20210810235809473.png" class="" title="image-20210810235809473"> 
+
+
+
+<p>&#x3D;&#x3D;注意: 对于 rm -rf xxx 这样的指令，在执行的时候，一定要慎重，确认无误后再进行删除，避免误删。&#x3D;&#x3D;</p>
+<h3 id="3-3-拷贝移动命令"><a href="#3-3-拷贝移动命令" class="headerlink" title="3.3 拷贝移动命令"></a>3.3 拷贝移动命令</h3><h4 id="3-3-1-cp"><a href="#3-3-1-cp" class="headerlink" title="3.3.1 cp"></a>3.3.1 cp</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">作用: 用于复制文件或目录</span><br><span class="line">语法: cp [-r] source dest</span><br><span class="line"></span><br><span class="line">说明: </span><br><span class="line">	-r: 如果复制的是目录需要使用此选项，此时将复制该目录下所有的子目录和文件</span><br><span class="line"></span><br><span class="line">举例: </span><br><span class="line">    cp hello.txt itcast/            将hello.txt复制到itcast目录中</span><br><span class="line">    cp hello.txt ./hi.txt           将hello.txt复制到当前目录，并改名为hi.txt</span><br><span class="line">    cp -r itcast/ ./itheima/    	将itcast目录和目录下所有文件复制到itheima目录下</span><br><span class="line">    cp -r itcast/* ./itheima/ 	 	将itcast目录下所有文件复制到itheima目录下</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>操作示例:</strong> </p>
+<img src="/2024/08/30/Linux/image-20210811180508369.png" class="" title="image-20210811180508369"> 
+
+<img src="/2024/08/30/Linux/image-20210811180638556.png" class="" title="image-20210811180638556"> 
+
+<img src="/2024/08/30/Linux/image-20210811180914417.png" class="" title="image-20210811180914417"> 
+
+<p>如果拷贝的内容是目录，需要加上参数 -r </p>
+<h4 id="3-3-2-mv"><a href="#3-3-2-mv" class="headerlink" title="3.3.2 mv"></a>3.3.2 mv</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">作用: 为文件或目录改名、或将文件或目录移动到其它位置</span><br><span class="line">语法: mv source dest</span><br><span class="line"></span><br><span class="line">举例: </span><br><span class="line">    mv hello.txt hi.txt                 将hello.txt改名为hi.txt</span><br><span class="line">    mv hi.txt itheima/                  将文件hi.txt移动到itheima目录中</span><br><span class="line">    mv hi.txt itheima/hello.txt   		将hi.txt移动到itheima目录中，并改名为hello.txt</span><br><span class="line">    mv itcast/ itheima/                 如果itheima目录不存在，将itcast目录改名为itheima</span><br><span class="line">    mv itcast/ itheima/                 如果itheima目录存在，将itcast目录移动到itheima目录中</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>操作示例:</strong> </p>
+<p>mv 命令既能够改名，又可以移动，具体是改名还是移动,系统会根据我们输入的参数进行判定(如果第二个参数dest是一个已存在的目录,将执行移动操作,其他情况都是改名)</p>
+<img src="/2024/08/30/Linux/image-20210811184240003.png" class="" title="image-20210811184240003">
+
+
+
+
+
+<h3 id="3-4-打包压缩命令"><a href="#3-4-打包压缩命令" class="headerlink" title="3.4 打包压缩命令"></a>3.4 打包压缩命令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">作用: 对文件进行打包、解包、压缩、解压</span><br><span class="line">语法: tar  [-zcxvf]  fileName  [files]</span><br><span class="line">    包文件后缀为.tar表示只是完成了打包，并没有压缩</span><br><span class="line">    包文件后缀为.tar.gz表示打包的同时还进行了压缩</span><br><span class="line"></span><br><span class="line">说明:</span><br><span class="line">    -z: z代表的是gzip，通过gzip命令处理文件，gzip可以对文件压缩或者解压</span><br><span class="line">    -c: c代表的是create，即创建新的包文件</span><br><span class="line">    -x: x代表的是extract，实现从包文件中还原文件</span><br><span class="line">    -v: v代表的是verbose，显示命令的执行过程</span><br><span class="line">    -f: f代表的是file，用于指定包文件的名称</span><br><span class="line"></span><br><span class="line">举例：</span><br><span class="line">    打包</span><br><span class="line">        tar -cvf hello.tar ./*		  		将当前目录下所有文件打包，打包后的文件名为hello.tar</span><br><span class="line">        tar -zcvf hello.tar.gz ./*		  	将当前目录下所有文件打包并压缩，打包后的文件名为hello.tar.gz</span><br><span class="line">		</span><br><span class="line">    解包</span><br><span class="line">        tar -xvf hello.tar		  			将hello.tar文件进行解包，并将解包后的文件放在当前目录</span><br><span class="line">        tar -zxvf hello.tar.gz		  		将hello.tar.gz文件进行解压，并将解压后的文件放在当前目录</span><br><span class="line">        tar -zxvf hello.tar.gz -C /usr/local     将hello.tar.gz文件进行解压，并将解压后的文件放在/usr/local目录</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>操作示例:</strong> </p>
+<p>A. 打包</p>
+<img src="/2024/08/30/Linux/image-20210811185728541.png" class="" title="image-20210811185728541"> 
+
+
+
+<p>B. 打包并压缩</p>
+<img src="/2024/08/30/Linux/image-20210811190035256.png" class="" title="image-20210811190035256"> 
+
+
+
+<p>C. 解包</p>
+<img src="/2024/08/30/Linux/image-20210811190307630.png" class="" title="image-20210811190307630"> 
+
+
+
+<p>D. 解压</p>
+<img src="/2024/08/30/Linux/image-20210811190450820.png" class="" title="image-20210811190450820"> 
+
+<p>解压到指定目录,需要加上参数 -C</p>
+<img src="/2024/08/30/Linux/image-20210811190626414.png" class="" title="image-20210811190626414"> 
+
+
+
+
+
+<h3 id="3-5-文本编辑命令"><a href="#3-5-文本编辑命令" class="headerlink" title="3.5 文本编辑命令"></a>3.5 文本编辑命令</h3><p>文本编辑的命令，主要包含两个: vi 和 vim，两个命令的用法类似，我们课程中主要讲解vim的使用。</p>
+<h4 id="3-5-1-vi-vim介绍"><a href="#3-5-1-vi-vim介绍" class="headerlink" title="3.5.1 vi&amp;vim介绍"></a>3.5.1 vi&amp;vim介绍</h4><p>作用: vi命令是Linux系统提供的一个文本编辑工具，可以对文件内容进行编辑，类似于Windows中的记事本</p>
+<p>语法: vi fileName</p>
+<p>说明:<br>  1). vim是从vi发展来的一个功能更加强大的文本编辑工具，编辑文件时可以对文本内容进行着色，方便我们对文件进行编辑处理，所以实际工作中vim更加常用。<br>  2). 要使用vim命令，需要我们自己完成安装。可以使用下面的命令来完成安装：<code>yum install vim</code></p>
+<h4 id="3-5-2-vim安装"><a href="#3-5-2-vim安装" class="headerlink" title="3.5.2 vim安装"></a>3.5.2 vim安装</h4><p>命令： yum install vim</p>
+<img src="/2024/08/30/Linux/image-20210811192217715.png" class="" title="image-20210811192217715"> 
+
+<p>安装过程中，会有确认提示，此时输入 y，然后回车，继续安装：</p>
+<img src="/2024/08/30/Linux/image-20210811192256269.png" class="" title="image-20210811192256269"> 
+
+<img src="/2024/08/30/Linux/image-20210811192350907.png" class="" title="image-20210811192350907"> 
+
+
+
+<h4 id="3-5-3-vim使用"><a href="#3-5-3-vim使用" class="headerlink" title="3.5.3 vim使用"></a>3.5.3 vim使用</h4><p>作用: 对文件内容进行编辑，vim其实就是一个文本编辑器<br>语法: vim fileName<br>说明:<br>    1). 在使用vim命令编辑文件时，如果指定的文件存在则直接打开此文件。如果指定的文件不存在则新建文件。<br>    2). vim在进行文本编辑时共分为三种模式，分别是 命令模式（Command mode），插入模式（Insert mode）和底行模式（Last line mode）。这三种模式之间可以相互切换。我们在使用vim时一定要注意我们当前所处的是哪种模式。</p>
+<p>三种模式:<br>    - 命令模式<br>      A. 命令模式下可以查看文件内容、移动光标（上下左右箭头、gg、G）<br>      B. 通过vim命令打开文件后，默认进入命令模式<br>      C. 另外两种模式需要首先进入命令模式，才能进入彼此</p>
+<pre><code>  | 命令模式指令 | 含义                              |
+  | ------------ | --------------------------------- |
+  | gg           | 定位到文本内容的第一行            |
+  | G            | 定位到文本内容的最后一行          |
+  | dd           | 删除光标所在行的数据              |
+  | ndd          | 删除当前光标所在行及之后的n行数据 |
+  | u            | 撤销操作                          |
+  | shift+zz     | 保存并退出                        |
+  | i 或 a 或 o  | 进入插入模式                      |
+</code></pre>
+<p>​      </p>
+<ul>
+<li><p>插入模式<br> A. 插入模式下可以对文件内容进行编辑<br> B. 在命令模式下按下[i,a,o]任意一个，可以进入插入模式。进入插入模式后，下方会出现【insert】字样<br> C. 在插入模式下按下ESC键，回到命令模式</p>
+</li>
+<li><p>底行模式<br> A. 底行模式下可以通过命令对文件内容进行查找、显示行号、退出等操作<br> B. 在命令模式下按下[:,&#x2F;]任意一个，可以进入底行模式<br> C. 通过&#x2F;方式进入底行模式后，可以对文件内容进行查找<br> D. 通过:方式进入底行模式后，可以输入wq（保存并退出）、q!（不保存退出）、set nu（显示行号）</p>
+<table>
+<thead>
+<tr>
+<th>底行模式命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>:wq</td>
+<td>保存并退出</td>
+</tr>
+<tr>
+<td>:q!</td>
+<td>不保存退出</td>
+</tr>
+<tr>
+<td>:set nu</td>
+<td>显示行号</td>
+</tr>
+<tr>
+<td>:set nonu</td>
+<td>取消行号显示</td>
+</tr>
+<tr>
+<td>:n</td>
+<td>定位到第n行, 如 :10 就是定位到第10行</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<p>​     <style>.leqbgbkshqyi{zoom: 80%;}</style><img src="/2024/08/30/Linux/image-20210811194627474.png" class="leqbgbkshqyi" alt="image-20210811194627474"> </p>
+<p>​	</p>
+<p><strong>操作示例:</strong> </p>
+<img src="/2024/08/30/Linux/image-20210811200005097.png" class="" title="image-20210811200005097"> 
+
+
+
+
+
+<h3 id="3-6-查找命令"><a href="#3-6-查找命令" class="headerlink" title="3.6 查找命令"></a>3.6 查找命令</h3><h4 id="3-6-1-find"><a href="#3-6-1-find" class="headerlink" title="3.6.1 find"></a>3.6.1 find</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">作用: 在指定目录下查找文件</span><br><span class="line">语法: find dirName -option fileName</span><br><span class="line">举例:</span><br><span class="line">    find  .  –name &quot;*.java&quot;			在当前目录及其子目录下查找.java结尾文件</span><br><span class="line">    find  /itcast  -name &quot;*.java&quot;	在/itcast目录及其子目录下查找.java结尾的文件</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>操作示例:</strong> </p>
+<img src="/2024/08/30/Linux/image-20210811200438459.png" class="" title="image-20210811200438459"> 
+
+
+
+
+
+<h4 id="3-6-2-grep"><a href="#3-6-2-grep" class="headerlink" title="3.6.2 grep"></a>3.6.2 grep</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">作用: 从指定文件中查找指定的文本内容</span><br><span class="line">语法: grep word fileName</span><br><span class="line">举例: </span><br><span class="line">    grep Hello HelloWorld.java	查找HelloWorld.java文件中出现的Hello字符串的位置</span><br><span class="line">    grep hello *.java			查找当前目录中所有.java结尾的文件中包含hello字符串的位置</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>操作示例:</strong> </p>
+<img src="/2024/08/30/Linux/image-20210811200737596.png" class="" title="image-20210811200737596"> 
+
+
+
+
+
+
+
+<h2 id="4-软件安装"><a href="#4-软件安装" class="headerlink" title="4. 软件安装"></a>4. 软件安装</h2><h3 id="4-1-软件安装方式"><a href="#4-1-软件安装方式" class="headerlink" title="4.1 软件安装方式"></a>4.1 软件安装方式</h3><p>在Linux系统中，安装软件的方式主要有四种，这四种安装方式的特点如下：</p>
+<table>
+<thead>
+<tr>
+<th>安装方式</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>二进制发布包安装</td>
+<td>软件已经针对具体平台编译打包发布，只要解压，修改配置即可</td>
+</tr>
+<tr>
+<td>rpm安装</td>
+<td>软件已经按照redhat的包管理规范进行打包，使用rpm命令进行安装，&#x3D;&#x3D;不能自行解决库依赖问题&#x3D;&#x3D;</td>
+</tr>
+<tr>
+<td>yum安装</td>
+<td>一种在线软件安装方式，本质上还是rpm安装，自动下载安装包并安装，安装过程中自动解决库依赖问题(安装过程需要联网)</td>
+</tr>
+<tr>
+<td>源码编译安装</td>
+<td>软件以源码工程的形式发布，需要自己编译打包</td>
+</tr>
+</tbody></table>
+<h3 id="4-2-安装JDK"><a href="#4-2-安装JDK" class="headerlink" title="4.2 安装JDK"></a>4.2 安装JDK</h3><p>上述我们介绍了Linux系统软件安装的四种形式，接下来我们就通过第一种(二进制发布包)形式来安装JDK。 JDK对应的二进制发布包，在课程资料中已经提供  </p>
+<p>JDK具体安装步骤如下： </p>
+<p><strong>1). 上传安装包</strong></p>
+<p>使用FinalShell自带的上传工具将jdk的二进制发布包上传到Linux</p>
+<img src="/2024/08/30/Linux/image-20231213234849748.png" class="" title="image-20231213234849748">   
+
+<p>由于上述在进行文件上传时，选择的上传目录为根目录 &#x2F;，上传完毕后，我们执行指令 cd &#x2F; 切换到根目录下，查看上传的安装包。</p>
+<img src="/2024/08/30/Linux/image-20231213235018977.png" class="" title="image-20231213235018977">   
+
+
+
+<p><strong>2). 解压安装包</strong></p>
+<p>执行如下指令，将上传上来的压缩包进行解压，并通过-C参数指定解压文件存放目录为 &#x2F;usr&#x2F;local。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf ./jdk-11.0.2_linux-x64_bin.tar.gz -C /usr/local</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>3). 配置环境变量</strong></p>
+<p>使用vim命令修改&#x2F;etc&#x2F;profile文件，在文件末尾加入如下配置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/jdk-11.0.2</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+
+
+
+<p>具体操作指令如下: </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">1). 编辑/etc/profile文件，进入命令模式</span><br><span class="line">	vim /etc/profile</span><br><span class="line"></span><br><span class="line">2). 在命令模式中，输入指令 G ， 切换到文件最后</span><br><span class="line">	G</span><br><span class="line"></span><br><span class="line">3). 在命令模式中输入 i/a/o 进入插入模式，然后切换到文件最后一行</span><br><span class="line">	i</span><br><span class="line"></span><br><span class="line">4). 将上述的配置拷贝到文件中</span><br><span class="line">	export JAVA_HOME=/usr/local/jdk-21.0.1</span><br><span class="line">	export PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">	</span><br><span class="line">5). 从插入模式，切换到指令模式</span><br><span class="line">	ESC</span><br><span class="line">	</span><br><span class="line">6). 按:进入底行模式，然后输入wq，回车保存</span><br><span class="line">	:wq</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>4). 重新加载profile文件</strong></p>
+<p>为了使更改的配置立即生效，需要重新加载profile文件，执行命令:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>5). 检查安装是否成功</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
+
+<img src="/2024/08/30/Linux/image-20231213235354460.png" class="" title="image-20231213235354460">   
+
+
+
+
+
+<h3 id="4-3-安装MySQL"><a href="#4-3-安装MySQL" class="headerlink" title="4.3 安装MySQL"></a>4.3 安装MySQL</h3><h4 id="4-3-1-MySQL安装"><a href="#4-3-1-MySQL安装" class="headerlink" title="4.3.1 MySQL安装"></a>4.3.1 MySQL安装</h4><p>对于MySQL数据库的安装，我们将要使用前面讲解的第一种安装方式进行安装。</p>
+<p><strong>1). 准备工作</strong></p>
+<p>在安装MySQL数据库之前，我们需要先检查一下当前Linux系统中，是否安装的有MySQL的相关服务（很多linux安装完毕之后，自带了低版本的mysql的依赖包），如果有，先需要卸载掉，然后再进行安装。</p>
+<p>A. 通过rpm相关指令，来<strong>查询</strong>当前系统中是否存在已安装的mysql软件包，执行指令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa							#查询当前系统中安装的所有软件</span><br><span class="line">rpm -qa | grep mysql			 #查询当前系统中安装的名称带mysql的软件</span><br><span class="line">rpm -qa | grep mariadb			 #查询当前系统中安装的名称带mariadb的软件</span><br></pre></td></tr></table></figure>
+
+<p>通过rpm -qa 查询到系统通过rpm安装的所有软件，太多了，不方便查看，所以我们可以通过管道符 | 配合着grep进行过滤查询。</p>
+<img src="/2024/08/30/Linux/image-20231213235536195.png" class="" title="image-20231213235536195">  
+
+<p>通过查询，我们发现在当前系统中存在mariadb数据库，是CentOS7中自带的，而这个数据库和MySQL数据库是冲突的，所以要想保证MySQL成功安装，需要卸载mariadb数据库。</p>
+<blockquote>
+<p><strong>RPM：</strong>全称为 Red-Hat Package Manager，RPM软件包管理器，是红帽Linux用于管理和安装软件的工具。</p>
+</blockquote>
+<p>B. 通过 rpm 相关指令，来卸载对应的组件，执行指令如下：</p>
+<p>在rpm中，卸载软件的语法为： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -e --nodeps  软件名称</span><br></pre></td></tr></table></figure>
+
+<p>那么，我们就可以通过指令，卸载 mariadb，具体指令为： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -e --nodeps mariadb-libs-5.5.60-1.el7_5.x86_64</span><br></pre></td></tr></table></figure>
+
+<img src="/2024/08/30/Linux/image-20231213235609157.png" class="" title="image-20231213235609157">  
+
+<p>我们看到执行完毕之后， 再次查询 mariadb，就查不到了，因为已经被成功卸载了。</p>
+<p><strong>2). 将资料中提供的MySQL安装包上传到Linux并解压</strong></p>
+<p>A. 上传MySQL安装包</p>
+<p>在课程资料中，提供的有MySQL的安装包 ，我们需要将该安装包上传到Linux系统的根目录 &#x2F; 下面。</p>
+<img src="/2024/08/30/Linux/image-20230429222125294-17024819391888.png" class="" title="image-20230429222125294">  
+
+<img src="/2024/08/30/Linux/image-20230429222202648-17024819391899.png" class="" title="image-20230429222202648">  
+
+
+
+<p>B. 解压到 当前目录</p>
+<p>执行如下指令: </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf mysql-8.0.30-linux-glibc2.12-x86_64.tar.xz</span><br></pre></td></tr></table></figure>
+
+<img src="/2024/08/30/Linux/image-20230429222328342-170248193918910.png" class="" title="image-20230429222328342">  
+
+
+
+<p>C. 将解压后的文件夹移动到 &#x2F;usr&#x2F;local 目录下， 并改名为 mysql</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mv mysql-8.0.30-linux-glibc2.12-x86_64 /usr/local/mysql</span><br><span class="line"></span><br><span class="line">cd /usr/local/mysql</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><strong>3). 配置系统环境变量</strong></p>
+<p>配置MySQL的环境变量, 通过vi编辑器编辑 <code>/etc/profile</code> 文件, 在尾部追加:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export MYSQL_HOME=/usr/local/mysql</span><br><span class="line">export PATH=$MYSQL_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+
+
+
+<p>并执行如下指令, 注册MySQL为系统服务:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql</span><br><span class="line"></span><br><span class="line">chkconfig --add mysql</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p><strong>5). 初始化数据库</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">创建一个用户组, 组名就叫mysql</span></span><br><span class="line">groupadd mysql</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">创建一个系统用户 mysql, 并归属于用户组 mysql ,</span> </span><br><span class="line">useradd -r -g mysql -s /bin/false mysql</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">初始化mysql</span></span><br><span class="line">mysqld --initialize --user=mysql --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data</span><br></pre></td></tr></table></figure>
+
+<p>执行上述指令时, 会输入如下日志，在日志中就输出了MySQL中root用户的一个临时密码【<strong>记得复制出来，记录下来</strong>】： </p>
+<img src="/2024/08/30/Linux/image-20230429223328058-170248193918911.png" class="" title="image-20230429223328058"> 
+
+
+
+
+
+
+
+<h4 id="1-3-2-启动MySQL"><a href="#1-3-2-启动MySQL" class="headerlink" title="1.3.2 启动MySQL"></a>1.3.2 启动MySQL</h4><p>A. 启动MySQL服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mysql</span><br></pre></td></tr></table></figure>
+
+
+
+<p>B. 通过命令, 登录MySQL</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">xxxxx 代表上述生成的root的临时密码</span></span><br><span class="line">mysql -uroot -pxxxxx</span><br></pre></td></tr></table></figure>
+
+<img src="/2024/08/30/Linux/image-20230429223546041-170248193918912.png" class="" title="image-20230429223546041"> 
+
+
+
+
+
+
+
+<h4 id="1-3-3-配置MySQL"><a href="#1-3-3-配置MySQL" class="headerlink" title="1.3.3 配置MySQL"></a>1.3.3 配置MySQL</h4><p>A. 修改root用户的密码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;1234&#x27;;</span><br></pre></td></tr></table></figure>
+
+<img src="/2024/08/30/Linux/image-20230429224538029-170248193918913.png" class="" title="image-20230429224538029"> 
+
+<p><strong>注意: 这个root账号仅仅能够在本机localhost上访问，我们在windows上是无法访问的。如果需要在window上或其他服务器上也能远程访问，需要创建一个账号，用于远程访问的。</strong></p>
+<p>D. 创建账号, 并授权远程访问</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;1234&#x27;;</span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO &#x27;root&#x27;@&#x27;%&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+
+<img src="/2024/08/30/Linux/image-20230429224602068-170248193918914.png" class="" title="image-20230429224602068"> 
+
+
+
+<p>我们已经开启了MySQL的远程访问的权限，为什么还是连接不上MySQL服务器呢？？ 这是因为Linux系统的防火墙，将我们的访问拦截了。</p>
+<img src="/2024/08/30/Linux/image-20231214000139253.png" class="" title="image-20231214000139253">  
+
+
+
+
+
+<h4 id="1-3-4-防火墙操作"><a href="#1-3-4-防火墙操作" class="headerlink" title="1.3.4 防火墙操作"></a>1.3.4 防火墙操作</h4><p>Linux系统安装完毕后，系统启动时，防火墙自动启动，防火墙拦截了所有端口的访问。接下来我们就需要学习一下，如何操作防火墙，具体指令如下： </p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>指令</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>查看防火墙状态</td>
+<td>systemctl status firewalld &#x2F; firewall-cmd –state</td>
+<td></td>
+</tr>
+<tr>
+<td>暂时关闭防火墙</td>
+<td>systemctl stop firewalld</td>
+<td></td>
+</tr>
+<tr>
+<td>永久关闭防火墙(禁用开机自启)</td>
+<td>systemctl disable firewalld</td>
+<td>下次启动,才生效</td>
+</tr>
+<tr>
+<td>暂时开启防火墙</td>
+<td>systemctl start firewalld</td>
+<td></td>
+</tr>
+<tr>
+<td>永久开启防火墙(启用开机自启)</td>
+<td>systemctl enable firewalld</td>
+<td>下次启动,才生效</td>
+</tr>
+<tr>
+<td>开放指定端口</td>
+<td>firewall-cmd –zone&#x3D;public –add-port&#x3D;8080&#x2F;tcp –permanent</td>
+<td>需要重新加载生效</td>
+</tr>
+<tr>
+<td>关闭指定端口</td>
+<td>firewall-cmd –zone&#x3D;public –remove-port&#x3D;8080&#x2F;tcp –permanent</td>
+<td>需要重新加载生效</td>
+</tr>
+<tr>
+<td>立即生效(重新加载)</td>
+<td>firewall-cmd –reload</td>
+<td></td>
+</tr>
+<tr>
+<td>查看开放端口</td>
+<td>firewall-cmd –zone&#x3D;public –list-ports</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>注意： 要想在windows上能够访问MySQL，需要开放防火墙的3306端口  或者 直接关闭防火墙 ，执行如下指令:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">开发防火墙的3306端口号</span></span><br><span class="line">firewall-cmd --zone=public --add-port=3306/tcp --permanent</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">重新加载</span></span><br><span class="line">firewall-cmd --reload</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看开放的端口号</span></span><br><span class="line">firewall-cmd --zone=public --list-ports</span><br></pre></td></tr></table></figure>
+
+<img src="/2024/08/30/Linux/image-20230429225048715-170248193918916.png" class="" title="image-20230429225048715"> 
+
+
+
+<p>或者直接关闭防火墙: </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld</span><br></pre></td></tr></table></figure>
+
+<img src="/2024/08/30/Linux/image-20230429225303564-170248193918917.png" class="" title="image-20230429225303564"> 
+
+
+
+
+
+
+
+<h4 id="1-3-5-连接测试"><a href="#1-3-5-连接测试" class="headerlink" title="1.3.5 连接测试"></a>1.3.5 连接测试</h4><p>关闭掉linux系统的防火墙之后，我们就可以打开windows上的命令行，通过mysql的客户端(命令行&#x2F;图形化界面)来连接远程linux上安装的MySQL数据库了。</p>
+<p>1). 客户端连接</p>
+<img src="/2024/08/30/Linux/image-20231214000235375.png" class="" title="image-20231214000235375">  
+
+
+
+<p>2). 测试导入SQL脚本</p>
+<p>连接上linux上的mysql数据库之后, 我们可以将资料中提供的项目的SQL脚本 <code>tlias.sql</code> 中的SQL语句复制出来，在命令行中执行，导入数据库。</p>
+<img src="/2024/08/30/Linux/image-20231214001539562.png" class="" title="image-20231214001539562"> 
+
+<img src="/2024/08/30/Linux/image-20231214001553360.png" class="" title="image-20231214001553360"> 
+
+
+
+
+
+
+
+<h3 id="4-4-安装Nginx"><a href="#4-4-安装Nginx" class="headerlink" title="4.4 安装Nginx"></a>4.4 安装Nginx</h3><h4 id="4-4-1-安装Nginx"><a href="#4-4-1-安装Nginx" class="headerlink" title="4.4.1 安装Nginx"></a>4.4.1 安装Nginx</h4><p>Nginx的安装包，从官方下载下来的是c语言的源码包，我们需要自己编译安装。具体操作步骤如下：</p>
+<p>1). 安装Nginx运行时需要的依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y pcre pcre-devel zlib zlib-devel openssl openssl-devel gcc-c++</span><br></pre></td></tr></table></figure>
+
+
+
+<p>2). 上传Nginx的源码包</p>
+<style>.keofecbhlfii{zoom:67%;}</style><img src="/2024/08/30/Linux/image-20230430180721921-170248193919028.png" class="keofecbhlfii" alt="image-20230430180721921"> 
+
+
+
+<p>3). 解压源码包到当前目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf nginx-1.20.2.tar.gz</span><br></pre></td></tr></table></figure>
+
+
+
+<p>4). 进入到解压目录后，执行指令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">进入解压目录</span></span><br><span class="line">cd nginx-1.20.2</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">执行命令配置, 生成Makefile文件</span></span><br><span class="line">./configure --prefix=/usr/local/nginx</span><br></pre></td></tr></table></figure>
+
+
+
+<p>5). 执行命令进行编译和安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">编译</span></span><br><span class="line">make</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">编译安装</span></span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="4-4-2-启动Nginx"><a href="#4-4-2-启动Nginx" class="headerlink" title="4.4.2 启动Nginx"></a>4.4.2 启动Nginx</h4><p>进入到nginx安装目录<code>/usr/local/nginx</code>，启动nginx服务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/nginx/</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sbin/nginx</span><br></pre></td></tr></table></figure>
+
+
+
+<p>启动完毕之后，我们可以通过 <code>ps</code> 指令查询当前系统中的nginx进程，从而确认nginx是否启动 。</p>
+<img src="/2024/08/30/Linux/image-20231214153612883.png" class="" title="image-20231214153612883">  
+
+
+
+<p>然后，我们就可以打开浏览器，访问服务器上的nginx 。</p>
+<img src="/2024/08/30/Linux/image-20231214153648792.png" class="" title="image-20231214153648792">   
+
+
+
+
+
+<h4 id="4-4-3-部署前端项目"><a href="#4-4-3-部署前端项目" class="headerlink" title="4.4.3 部署前端项目"></a>4.4.3 部署前端项目</h4><p>1). 将资料中提供的 “nginx部署” 目录下的文件夹 “sky” 上传到nginx安装目录下的 html 目录中.</p>
+<img src="/2024/08/30/Linux/image-20231214155542604.png" class="" title="image-20231214155542604">  
+
+
+
+<p>2). 修改资料中提供的 <code>nginx.conf</code> 配置文件，将其上传到nginx安装目录下的 conf 目录中.</p>
+<img src="/2024/08/30/Linux/image-20231214155812367.png" class="" title="image-20231214155812367">  
+
+
+
+<p>3). 重新加载nginx服务的配置文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">重新加载配置文件</span></span><br><span class="line">sbin/nginx -s reload</span><br></pre></td></tr></table></figure>
+
+
+
+<p>4). 再次访问nginx (可能会存在浏览器缓存, 可以按Ctrl+F5, 强制刷新清理缓存)</p>
+<img src="/2024/08/30/Linux/image-20231214155833714.png" class="" title="image-20231214155833714"> 
+
+
+
+
+
+<blockquote>
+<p>nginx服务常见操作指令: </p>
+<p>​	启动: sbin&#x2F;nginx</p>
+<p>​	重载: sbin&#x2F;nginx -s reload</p>
+<p>​	停止: sbin&#x2F;nginx -s stop</p>
+</blockquote>
+<h2 id="5-项目部署"><a href="#5-项目部署" class="headerlink" title="5. 项目部署"></a>5. 项目部署</h2><p>之前我们讲解Linux操作系统时，就提到，我们服务端开发工程师学习Linux系统的目的就是将来我们开发的项目绝大部分情况下都需要部署在Linux系统中。</p>
+<h4 id="5-1-环境准备"><a href="#5-1-环境准备" class="headerlink" title="5.1 环境准备"></a>5.1 环境准备</h4><p>那现在，项目要上线了，要部署到linux服务器上了，我们也需要使用linux服务器上所安装的mysql数据库。</p>
+<p>那此时，我们就可以再准备一份文件 <code>application.yml</code> 将里面的配置的mysql的ip地址及相关配置信息修改一下（配置Linux上安装的MySQL的信息）：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#数据库连接四要素</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">    <span class="attr">driver-class-name:</span> <span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">jdbc:mysql://192.168.138.128:3306/tlias</span></span><br><span class="line">    <span class="attr">username:</span> <span class="string">root</span></span><br><span class="line">    <span class="attr">password:</span> <span class="number">1234</span></span><br><span class="line">  <span class="attr">servlet:</span></span><br><span class="line">    <span class="attr">multipart:</span></span><br><span class="line">      <span class="attr">max-file-size:</span> <span class="string">10MB</span></span><br><span class="line">      <span class="attr">max-request-size:</span> <span class="string">100MB</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#mybatis配置</span></span><br><span class="line"><span class="attr">mybatis:</span></span><br><span class="line">  <span class="attr">configuration:</span></span><br><span class="line">    <span class="attr">log-impl:</span> <span class="string">org.apache.ibatis.logging.stdout.StdOutImpl</span></span><br><span class="line">    <span class="attr">map-underscore-to-camel-case:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">logging:</span></span><br><span class="line">  <span class="attr">level:</span></span><br><span class="line">    <span class="attr">org.springframework.jdbc.support.JdbcTransactionManager:</span> <span class="string">debug</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#阿里云</span></span><br><span class="line"><span class="attr">aliyun:</span></span><br><span class="line">  <span class="attr">oss:</span></span><br><span class="line">    <span class="attr">endpoint:</span> <span class="string">https://oss-cn-beijing.aliyuncs.com</span></span><br><span class="line">    <span class="attr">bucketName:</span> <span class="string">java417-web</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>改造完毕之后，可以在本地的idea中先启动当前项目，然后访问一下，看看工程是否正常访问。</p>
+<img src="/2024/08/30/Linux/image-20231214160539025.png" class="" title="image-20231214160539025">  
+
+
+
+
+
+<h4 id="2-1-2-打包部署"><a href="#2-1-2-打包部署" class="headerlink" title="2.1.2 打包部署"></a>2.1.2 打包部署</h4><p>1). 执行 <code>package</code> 指令，进行打包操作，将当前的springboot项目，打成一个jar包。 </p>
+ <style>.njrylnjpumcw{zoom:80%;}</style><img src="/2024/08/30/Linux/image-20231214160641995.png" class="njrylnjpumcw" alt="image-20231214160641995"> 
+
+
+
+<p>2). 在Linux服务器上创建一个目录，将jar包上传到服务器 。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/local/app</span><br></pre></td></tr></table></figure>
+
+<p>3). 通过java命令，启动项目</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">进入目录/usr/local/app</span> </span><br><span class="line">cd /usr/local/app</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">运行jar包</span></span><br><span class="line">java -jar sky-server-1.0-SNAPSHOT.jar</span><br></pre></td></tr></table></figure>
+
+<img src="/2024/08/30/Linux/image-20230430203222428-17025410066194.png" class="" title="image-20230430203222428"> 
+
+
+
+<p>当前程序中存在的问题: </p>
+<ul>
+<li><p>线上程序不会采用控制台霸屏的形式运行程序，而是将程序在后台运行</p>
+</li>
+<li><p>线上程序不会将日志输出到控制台，而是输出到日志文件，方便运维查阅信息</p>
+</li>
+</ul>
+<p>要解决上述这两个问题，我们就可以通过 nohup 指令让程序在后台运行。</p>
+<h4 id="2-1-3-后台运行"><a href="#2-1-3-后台运行" class="headerlink" title="2.1.3 后台运行"></a>2.1.3 后台运行</h4><p>1). 后台运行程序</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup  java –jar sky-server-1.0-SNAPSHOT.jar  &amp;&gt; sky.log &amp;</span><br></pre></td></tr></table></figure>
+
+<p>通过上述指令就可以后台运行服务，服务运行之后， 所有的日志信息都会输出到 sky.log 文件中。</p>
+ <img src="/2024/08/30/Linux/image-20230430204336223-17025410066205.png" class="" title="image-20230430204336223">
+
+
+
+<p>2). 停止服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看服务的进程信息</span></span><br><span class="line">ps -ef|grep sky</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">杀掉进程</span></span><br><span class="line">kill -9 xxxxx</span><br></pre></td></tr></table></figure>
+
+<img src="/2024/08/30/Linux/image-20230430203820612-17025410066206.png" class="" title="image-20230430203820612"> 
+
+
+
+
+
+<blockquote>
+<p><strong>nohup命令说明:</strong> </p>
+<p>​	<strong>nohup命令：</strong>英文全称 no hang up（不挂起），用于不挂断地运行指定命令，退出终端不会影响程序的运行</p>
+<p>​	<strong>语法格式：</strong> nohup Command [ Arg … ] [&amp;]</p>
+<p>​	<strong>参数说明：</strong></p>
+<p>​		Command：要执行的命令</p>
+<p>​		Arg：一些参数，可以指定输出文件</p>
+<p>​		&amp;：让命令在后台运行</p>
+<p>​	<strong>举例：</strong></p>
+<p>​		nohup java -jar boot工程.jar &amp;&gt; hello.log &amp;</p>
+<p>​		上述指令的含义为： 后台运行 java -jar 命令，并将日志输出到hello.log文件</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">白小笙</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2024/08/30/Linux/">http://example.com/2024/08/30/Linux/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/05/23/yunzaibot/" title="Yunzai-bot的搭建教程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">Yunzai-bot的搭建教程</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">白小笙</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-Day01"><span class="toc-number">1.</span> <span class="toc-text">Linux-Day01</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text">课程内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%89%8D%E8%A8%80"><span class="toc-number">1.2.</span> <span class="toc-text">1. 前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E4%BB%80%E4%B9%88%E6%98%AFLinux"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.1 什么是Linux</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Linux%E7%AE%80%E4%BB%8B"><span class="toc-number">1.3.</span> <span class="toc-text">2. Linux简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E4%B8%BB%E6%B5%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.3.1.</span> <span class="toc-text">2.1 主流操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Linux%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.2 Linux系统版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Linux%E5%AE%89%E8%A3%85"><span class="toc-number">1.3.3.</span> <span class="toc-text">2.3. Linux安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-1-%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">2.3.1 安装方式介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-2-%E5%AE%89%E8%A3%85VMware"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">2.3.2 安装VMware</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-3-%E6%8C%82%E8%BD%BDLinux%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">2.3.3 挂载Linux系统</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E5%AE%89%E8%A3%85SSH%E8%BF%9E%E6%8E%A5%E5%B7%A5%E5%85%B7"><span class="toc-number">1.3.4.</span> <span class="toc-text">2.4 安装SSH连接工具</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-1-SSH%E8%BF%9E%E6%8E%A5%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.3.4.1.</span> <span class="toc-text">2.4.1 SSH连接工具介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-2-FinalShell%E5%AE%89%E8%A3%85"><span class="toc-number">1.3.4.2.</span> <span class="toc-text">3.5.2 FinalShell安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-3-%E8%BF%9E%E6%8E%A5Linux"><span class="toc-number">1.3.4.3.</span> <span class="toc-text">3.5.3 连接Linux</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-Linux%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">1.3.5.</span> <span class="toc-text">2.5 Linux目录结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">1.4.</span> <span class="toc-text">3. Linux常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Linux%E5%91%BD%E4%BB%A4%E5%88%9D%E4%BD%93%E9%AA%8C"><span class="toc-number">1.4.1.</span> <span class="toc-text">3.1 Linux命令初体验</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%BC%94%E7%A4%BA"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">3.1.1 常用命令演示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2-Linux%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">3.1.2 Linux命令使用技巧</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-3-Linux%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.4.1.3.</span> <span class="toc-text">3.1.3 Linux命令格式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4"><span class="toc-number">1.4.2.</span> <span class="toc-text">3.2 文件目录操作命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-ls"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">3.2.1 ls</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-cd"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">3.2.2 cd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-3-cat"><span class="toc-number">1.4.2.3.</span> <span class="toc-text">3.2.3 cat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-4-more"><span class="toc-number">1.4.2.4.</span> <span class="toc-text">3.2.4 more</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-5-tail"><span class="toc-number">1.4.2.5.</span> <span class="toc-text">3.2.5 tail</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-6-mkdir"><span class="toc-number">1.4.2.6.</span> <span class="toc-text">3.2.6 mkdir</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-7-rmdir"><span class="toc-number">1.4.2.7.</span> <span class="toc-text">3.2.7 rmdir</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-8-rm"><span class="toc-number">1.4.2.8.</span> <span class="toc-text">3.2.8 rm</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E6%8B%B7%E8%B4%9D%E7%A7%BB%E5%8A%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">1.4.3.</span> <span class="toc-text">3.3 拷贝移动命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1-cp"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">3.3.1 cp</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2-mv"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">3.3.2 mv</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E6%89%93%E5%8C%85%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4"><span class="toc-number">1.4.4.</span> <span class="toc-text">3.4 打包压缩命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4"><span class="toc-number">1.4.5.</span> <span class="toc-text">3.5 文本编辑命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-1-vi-vim%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.4.5.1.</span> <span class="toc-text">3.5.1 vi&amp;vim介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-2-vim%E5%AE%89%E8%A3%85"><span class="toc-number">1.4.5.2.</span> <span class="toc-text">3.5.2 vim安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-3-vim%E4%BD%BF%E7%94%A8"><span class="toc-number">1.4.5.3.</span> <span class="toc-text">3.5.3 vim使用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4"><span class="toc-number">1.4.6.</span> <span class="toc-text">3.6 查找命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-1-find"><span class="toc-number">1.4.6.1.</span> <span class="toc-text">3.6.1 find</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-2-grep"><span class="toc-number">1.4.6.2.</span> <span class="toc-text">3.6.2 grep</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">1.5.</span> <span class="toc-text">4. 软件安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F"><span class="toc-number">1.5.1.</span> <span class="toc-text">4.1 软件安装方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%AE%89%E8%A3%85JDK"><span class="toc-number">1.5.2.</span> <span class="toc-text">4.2 安装JDK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E5%AE%89%E8%A3%85MySQL"><span class="toc-number">1.5.3.</span> <span class="toc-text">4.3 安装MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-1-MySQL%E5%AE%89%E8%A3%85"><span class="toc-number">1.5.3.1.</span> <span class="toc-text">4.3.1 MySQL安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-%E5%90%AF%E5%8A%A8MySQL"><span class="toc-number">1.5.3.2.</span> <span class="toc-text">1.3.2 启动MySQL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-3-%E9%85%8D%E7%BD%AEMySQL"><span class="toc-number">1.5.3.3.</span> <span class="toc-text">1.3.3 配置MySQL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-4-%E9%98%B2%E7%81%AB%E5%A2%99%E6%93%8D%E4%BD%9C"><span class="toc-number">1.5.3.4.</span> <span class="toc-text">1.3.4 防火墙操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-5-%E8%BF%9E%E6%8E%A5%E6%B5%8B%E8%AF%95"><span class="toc-number">1.5.3.5.</span> <span class="toc-text">1.3.5 连接测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E5%AE%89%E8%A3%85Nginx"><span class="toc-number">1.5.4.</span> <span class="toc-text">4.4 安装Nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-1-%E5%AE%89%E8%A3%85Nginx"><span class="toc-number">1.5.4.1.</span> <span class="toc-text">4.4.1 安装Nginx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-2-%E5%90%AF%E5%8A%A8Nginx"><span class="toc-number">1.5.4.2.</span> <span class="toc-text">4.4.2 启动Nginx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-3-%E9%83%A8%E7%BD%B2%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.5.4.3.</span> <span class="toc-text">4.4.3 部署前端项目</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2"><span class="toc-number">1.6.</span> <span class="toc-text">5. 项目部署</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="toc-number">1.6.0.1.</span> <span class="toc-text">5.1 环境准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-2-%E6%89%93%E5%8C%85%E9%83%A8%E7%BD%B2"><span class="toc-number">1.6.0.2.</span> <span class="toc-text">2.1.2 打包部署</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-3-%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C"><span class="toc-number">1.6.0.3.</span> <span class="toc-text">2.1.3 后台运行</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/30/Linux/" title="Linux">Linux</a><time datetime="2024-08-30T04:30:00.000Z" title="Created 2024-08-30 12:30:00">2024-08-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/23/yunzaibot/" title="Yunzai-bot的搭建教程">Yunzai-bot的搭建教程</a><time datetime="2024-05-23T04:30:00.000Z" title="Created 2024-05-23 12:30:00">2024-05-23</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By 白小笙</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
